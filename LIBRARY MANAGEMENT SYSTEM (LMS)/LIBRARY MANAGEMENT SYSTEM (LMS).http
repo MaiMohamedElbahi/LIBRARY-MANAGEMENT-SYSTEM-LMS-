@@ -1,0 +1,6 @@
+@LIBRARY_MANAGEMENT_SYSTEM__LMS__HostAddress = http://localhost:5272
+
+GET {{LIBRARY_MANAGEMENT_SYSTEM__LMS__HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
