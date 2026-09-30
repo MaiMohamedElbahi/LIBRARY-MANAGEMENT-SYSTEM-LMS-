@@ -15,6 +15,7 @@ namespace LIBRARY_MANAGEMENT_SYSTEM__LMS_.Data
         public DbSet<BorrowRecord> BorrowRecords { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Member> Members { get; set; }
+        public DbSet<AuthUser> AuthUsers { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

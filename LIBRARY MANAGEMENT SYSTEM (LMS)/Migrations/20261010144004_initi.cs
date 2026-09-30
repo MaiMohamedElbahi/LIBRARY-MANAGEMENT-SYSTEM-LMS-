@@ -14,6 +14,21 @@ namespace LIBRARY_MANAGEMENT_SYSTEM__LMS_.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "AuthUsers",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Role = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserName = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AuthUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Categories",
                 columns: table => new
                 {
@@ -137,6 +152,12 @@ namespace LIBRARY_MANAGEMENT_SYSTEM__LMS_.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_AuthUsers_UserName",
+                table: "AuthUsers",
+                column: "UserName",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Books_CategoryId",
                 table: "Books",
                 column: "CategoryId");
@@ -167,6 +188,9 @@ namespace LIBRARY_MANAGEMENT_SYSTEM__LMS_.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "AuthUsers");
+
             migrationBuilder.DropTable(
                 name: "BorrowRecords");
 

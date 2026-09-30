@@ -1,8 +1,8 @@
-﻿
-using LIBRARY_MANAGEMENT_SYSTEM__LMS_.Data;
+﻿using LIBRARY_MANAGEMENT_SYSTEM__LMS_.Data;
+using LIBRARY_MANAGEMENT_SYSTEM__LMS_.REPOs.Interface;
 using Microsoft.EntityFrameworkCore;
 
-namespace LIBRARY_MANAGEMENT_SYSTEM__LMS_.REPOs
+namespace LIBRARY_MANAGEMENT_SYSTEM__LMS_.REPOs.Implementation
 {
     public class GenericRepo<T> : IGenericRepo<T> where T : class
     {
@@ -17,7 +17,7 @@ namespace LIBRARY_MANAGEMENT_SYSTEM__LMS_.REPOs
         public void Add(T item)
         {
             _db.Add(item);
-            _context.SaveChanges();
+             
         }
 
         public void Delete(int id)
@@ -26,7 +26,7 @@ namespace LIBRARY_MANAGEMENT_SYSTEM__LMS_.REPOs
             if (entity != null)
             {
                 _db.Remove(entity);
-                _context.SaveChanges();
+                 
             }
         }
 
@@ -49,7 +49,7 @@ namespace LIBRARY_MANAGEMENT_SYSTEM__LMS_.REPOs
         public void Update(T item)
         {
             _db.Update(item);
-            _context.SaveChanges();
+             
         }
 
     }

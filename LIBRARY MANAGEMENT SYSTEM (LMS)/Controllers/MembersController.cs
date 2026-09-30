@@ -2,7 +2,7 @@
 using LIBRARY_MANAGEMENT_SYSTEM__LMS_.DTOs;
 using LIBRARY_MANAGEMENT_SYSTEM__LMS_.DTOs.MemberDTOs;
 using LIBRARY_MANAGEMENT_SYSTEM__LMS_.Models;
-using LIBRARY_MANAGEMENT_SYSTEM__LMS_.REPOs;
+using LIBRARY_MANAGEMENT_SYSTEM__LMS_.REPOs.Interface;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860

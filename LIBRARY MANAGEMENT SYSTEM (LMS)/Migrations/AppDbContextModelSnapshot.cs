@@ -22,6 +22,34 @@ namespace LIBRARY_MANAGEMENT_SYSTEM__LMS_.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("LIBRARY_MANAGEMENT_SYSTEM__LMS_.Models.AuthUser", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserName")
+                        .IsUnique();
+
+                    b.ToTable("AuthUsers");
+                });
+
             modelBuilder.Entity("LIBRARY_MANAGEMENT_SYSTEM__LMS_.Models.Book", b =>
                 {
                     b.Property<int>("BookId")

@@ -1,4 +1,4 @@
-﻿namespace LIBRARY_MANAGEMENT_SYSTEM__LMS_.REPOs
+﻿namespace LIBRARY_MANAGEMENT_SYSTEM__LMS_.REPOs.Interface
 {
     public interface IGenericRepo<T> where T : class
     {
